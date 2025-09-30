@@ -1,0 +1,3 @@
+#  Hands-on Lab
+
+- **Hands-on Lab**: This section provides a practical, hands-on experience with OpenShift. It begins with setting up an OpenShift cluster, guiding learners through the process of installing and configuring OpenShift components. Subsequently, it involves deploying a sample application, enabling learners to understand the application lifecycle management in OpenShift. Furthermore, this lab covers configuring networking and storage, crucial aspects for managing resources and services in OpenShift. This hands-on approach ensures that learners can apply their theoretical knowledge, gaining proficiency in OpenShift operations.

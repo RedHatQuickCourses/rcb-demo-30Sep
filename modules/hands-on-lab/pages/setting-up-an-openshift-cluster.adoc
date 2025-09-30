@@ -1,0 +1,52 @@
+#  Setting up an OpenShift cluster
+
+**Setting up an OpenShift Cluster**
+
+In this hands-on activity, you will learn how to set up a basic OpenShift cluster using the latest version of Red Hat OpenShift Container Platform. This process involves installing the necessary components and configuring them to work together.
+
+**Prerequisites:**
+
+- A machine with minimal 4 cores and 8GB RAM (for the OpenShift Origin installation node)
+- A registered Red Hat account to access the OpenShift Container Platform download
+- Basic understanding of Linux command line
+
+**Steps to Set Up an OpenShift Cluster:**
+
+1. **Install Docker:**
+
+   OpenShift uses Docker as a container runtime. Install Docker on your system following the official guide: https://docs.docker.com/engine/install/
+
+2. **Install OpenShift:**
+
+   Download the OpenShift Container Platform installer from the Red Hat Customer Portal. After logging in with your Red Hat account, navigate to "Downloads" and search for "OpenShift Container Platform". Choose the latest version and download the installer for your system.
+
+   Run the installer with the following command:
+
+   ```
+   sudo ./openshift-install create cluster --dir=oclusterr
+   ```
+
+   Replace `oclusterr` with the directory where you want to store the cluster configuration.
+
+3. **Configure Inventory File:**
+
+   The installer creates an inventory file (`inventory.yml`) in the specified directory. Open this file and modify it according to your environment. You'll need to specify the following:
+
+   - `api_ip`: The IP address for the OpenShift API server.
+   - `base_domain`: The base domain for your OpenShift cluster.
+   - `cluster_name`: The name for your OpenShift cluster.
+   - `pull_secret`: The location of your Pull Secret, which you can get from the Red Hat Customer Portal.
+
+4. **Start the OpenShift Cluster:**
+
+   With the inventory file configured, you can now start your OpenShift cluster using the following command:
+
+   ```
+   sudo ./openshift-install --dir=oclusterr advertise=true wait=true
+   ```
+
+5. **Access the OpenShift Web Console:**
+
+   Once the cluster is up and running, you can access the OpenShift web console by navigating to `https://<api_ip>:6443` in your web browser. Use the `oc` (oc CLI tool) to interact with your cluster from the command line.
+
+**Tro

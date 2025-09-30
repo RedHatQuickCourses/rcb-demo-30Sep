@@ -1,0 +1,29 @@
+#  OpenShift overview
+
+**OpenShift Overview**
+
+OpenShift, developed by Red Hat, is an open-source container application platform based on Kubernetes. It simplifies the container application development, deployment, and management processes. OpenShift provides a robust and flexible environment for developers to build, deploy, and run stateful and stateless applications on-premises, in a public cloud, or in a hybrid cloud environment.
+
+**Key Features of OpenShift:**
+
+1. **Source-to-Image (S2I):** This feature allows developers to automatically assemble container images from source code without the need to maintain separate build infrastructure and Dockerfiles.
+
+2. **Integrated CI/CD:** OpenShift integrates with popular CI/CD tools like Jenkins, GitLab, and GitHub, enabling automated builds, deployments, and testing.
+
+3. **Operator Pattern:** OpenShift supports the Operator pattern, which simplifies the deployment and management of complex stateful applications. Operators are clients of the Kubernetes API that enable declarative, automated management of applications.
+
+4. **Web Console and CLI:** OpenShift offers both a web console and a command-line interface (CLI), allowing users to choose their preferred method for managing applications and infrastructure.
+
+5. **Security and Isolation:** OpenShift provides robust security features, including isolated namespaces, role-based access control (RBAC), and integration with Red Hat's Quay.io for secure container image storage and distribution.
+
+6. **Multi-tenancy:** OpenShift supports multi-tenancy, allowing multiple teams or projects to share a single cluster while maintaining resource isolation and security.
+
+7. **Storage Orchestration:** OpenShift offers dynamic storage provisioning, enabling automatic configuration of storage based on application requirements.
+
+8. **Networking:** OpenShift provides advanced networking capabilities, including ingress controllers, route customization, and network policies, ensuring secure and efficient communication between services.
+
+In summary, OpenShift is a comprehensive container application platform that streamlines the development, deployment, and management of containerized applications. Its rich feature set, including Source-to-Image, integrated CI/CD, Operator pattern, and robust security features, makes it an ideal choice for organizations looking to adopt a modern, efficient, and scalable application platform.
+
+**Hands-on Activity:**
+
+To gain practical experience with OpenShift, participants can set up a simple OpenShift cluster using a tool like Minishift or CDK (Cluster Development Kit).

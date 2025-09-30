@@ -1,0 +1,12 @@
+#  Introduction to OpenShift
+
+- **OpenShift Overview**: This section provides an introduction to OpenShift, a Kubernetes-native platform for containerized applications. It covers the benefits of using OpenShift, such as its streamlined development and deployment processes, enhanced security, and scalability.
+
+- **OpenShift Architecture**: Here, we delve into the architecture of OpenShift, explaining its master and node components. The master component manages the cluster, while nodes host the applications. We also discuss the role of the OpenShift Operator in managing applications.
+
+- **OpenShift Components**: This part details the key components of OpenShift, including:
+  - **OpenShift Container Platform (OCP)**: The core container application platform.
+  - **Kubernetes**: The container orchestration layer.
+  - **Origin**: The community-driven project that forms the basis of OpenShift.
+  - **Hive**: A tool for provisioning clusters.
+  - **Ansible**: Used for configuration management.

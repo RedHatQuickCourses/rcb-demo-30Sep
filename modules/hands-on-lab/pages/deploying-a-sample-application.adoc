@@ -1,0 +1,65 @@
+#  Deploying a sample application
+
+== Deploying a Sample Application
+
+In this section, we will guide you through the process of deploying a simple "Welcome" application on your OpenShift cluster. This hands-on activity will help you understand the basic steps involved in containerized application deployment using OpenShift.
+
+### Prerequisites
+
+Before starting this lab, ensure that you have:
+
+1. An OpenShift cluster set up successfully. Refer to the 'Setting up an OpenShift cluster' lab for guidance.
+2. The `oc` CLI tool installed and configured to interact with your OpenShift cluster.
+3. Basic understanding of containerization and Kubernetes concepts.
+
+### Step 1: Create a New Project
+
+A project in OpenShift is equivalent to a namespace in Kubernetes. It's a way to partition resources among users or teams. To create a new project, run the following command:
+
+```bash
+oc new-project <project_name>
+```
+
+Replace `<project_name>` with a name of your choice. For instance:
+
+```bash
+oc new-project welcome-app-project
+```
+
+To verify the newly created project, use:
+
+```bash
+oc project
+```
+
+This should display the name of the project you just created.
+
+### Step 2: Prepare the Sample Application
+
+For this lab, we'll use a simple Node.js application that displays "Welcome to OpenShift!" when accessed. You can find the source code in the `welcome-app` directory.
+
+The application consists of:
+
+- `welcome.js`: A simple Node.js script that responds with "Welcome to OpenShift!" when accessed.
+- `Dockerfile`: Instructions to build a Docker image for the Node.js application.
+
+### Step 3: Build the Docker Image
+
+Navigate to the `welcome-app` directory and build the Docker image:
+
+```bash
+cd welcome-app
+oc new-build --strategy=docker --name=welcome-app
+```
+
+This command tells OpenShift to create a new build configuration named `welcome-app` using the Docker strategy. OpenShift will then automatically trigger a build based on this configuration.
+
+### Step 4: Deploy the Application
+
+Once the build is successful, you can deploy the application using the following command:
+
+```bash
+oc new-app welcome-app
+```
+
+This command creates a new application using the previously built

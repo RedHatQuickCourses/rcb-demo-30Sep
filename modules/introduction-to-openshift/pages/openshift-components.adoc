@@ -1,0 +1,33 @@
+#  OpenShift components
+
+**OpenShift Components**
+
+OpenShift, a Kubernetes-based container orchestration platform, comprises several key components that work together to provide a robust environment for deploying and managing applications. Here, we'll explore these essential components:
+
+1. **Master Node**: The master node is the control plane of the OpenShift cluster. It houses critical components responsible for managing the cluster. These include:
+
+   - **API Server**: This is the front-end for the OpenShift control plane. It exposes the OpenShift API and is responsible for authenticating and authorizing all REST requests.
+
+   - **Controller Manager**: This component runs controllers, which regulate the state of the cluster. Controllers manage various aspects, such as replication for deployments/deploymentconfigs, services, and persistent volume claims.
+
+   - **etcd**: A distributed key-value store used for consistent, reliable storage of configuration data. It's the backbone for the persistent storage of all cluster components' data.
+
+2. **Worker Nodes**: Worker nodes are where the application containers are run. Each node has the necessary services to manage pods and receives instructions from the master node. Key services include:
+
+   - **Kubelet**: An agent that ensures containers are running in pods. It communicates with the master node's API server to obtain the required configuration details for the containers.
+
+   - **Container Runtime**: This is the software responsible for running containers. OpenShift supports Docker, CRI-O, and containerd as container runtimes.
+
+3. **Registry**: An integrated Docker Registry stores container images. It allows for easy distribution and management of container images across the cluster.
+
+4. **Service Catalog**: This component provides access to provision instances of services from a catalog. It enables users to connect their applications to managed services offered by the service brokers.
+
+5. **Template Broker**: The Template Broker provides a way to store and manage OpenShift templates, which are predefined configurations for setting up applications and services on OpenShift.
+
+6. **Web Console and CLI (oc)**: OpenShift provides both a web-based console and a command-line interface (CLI) for interacting with the cluster. These tools simplify the process of managing applications, monitoring cluster health, and configuring resources.
+
+**Hands-on Activity: Exploring OpenShift Components**
+
+To gain practical experience with these components, follow these steps:
+
+1. **Set up an OpenShift cluster** (refer to the relevant lab

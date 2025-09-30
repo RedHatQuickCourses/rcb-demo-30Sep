@@ -1,0 +1,34 @@
+#  Configuring networking and storage
+
+**Configuring Networking and Storage in OpenShift**
+
+In this section, we will delve into the crucial aspects of configuring networking and storage in OpenShift. Proper configuration of these components is essential for ensuring seamless communication between pods and reliable data persistence for applications.
+
+**1. Understanding OpenShift Networking**
+
+OpenShift uses software-defined networking (SDN) to provide a flexible and scalable network solution. The primary SDN solution used in OpenShift is Open vSwitch (OVS). Here, we'll discuss key networking concepts:
+
+- **Network Isolation**: OpenShift uses a flat network model with network policies enforced by OVS to isolate pods, enabling secure communication between them.
+- **Service Discovery**: OpenShift Services provide a stable IP address and DNS name for a set of pods, allowing for easy service discovery within the cluster.
+- **Ingress and Route**: OpenShift Ingress and Routes expose services to the outside world, enabling secure communication with external clients.
+
+**Hands-on Activity: Configuring Network Policies**
+
+1. Log in to your OpenShift cluster as a cluster administrator.
+2. Create a new project for testing network policies.
+3. Define a network policy that allows pods in a specific namespace to communicate with each other but not with pods in other namespaces.
+4. Apply the network policy to the project.
+5. Deploy a sample application consisting of multiple pods and verify that they can communicate based on the defined network policy.
+
+**2. Configuring Storage in OpenShift**
+
+OpenShift provides various persistent storage options, including local storage, network file systems, cloud providers, and storage area networks (SANs). The most commonly used storage solutions are:
+
+- **Persistent Volumes (PV) and Persistent Volume Claims (PVC)**: These OpenShift objects allow developers to create and consume storage without needing intimate knowledge of the underlying storage technology.
+- **Dynamic Provisioning**: OpenShift can automatically provision storage based on PVC requests, simplifying storage management.
+
+**Hands-on Activity: Setting Up Persistent Storage**
+
+1. Log in to your OpenShift cluster as a cluster administrator.
+2. Create a StorageClass object for your preferred storage provider (e.g., NFS, AWS Elastic Block Store, etc.).
+3. Define a PVC requesting a specific storage capacity and access mode (ReadWriteOnce, ReadWriteMany
