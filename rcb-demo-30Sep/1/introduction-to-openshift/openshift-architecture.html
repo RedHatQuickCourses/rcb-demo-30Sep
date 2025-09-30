@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>OpenShift architecture :: OpenShift Basics Course Outline</title>
+    <link rel="prev" href="openshift-overview.html">
+    <link rel="next" href="openshift-components.html">
+    <meta name="generator" content="Antora 3.1.3">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://www.redhat.com" target="_blank"><img src="../../../_/img/redhat-logo.png" height="40px" alt="Red Hat"></a>
+      <a class="navbar-item" style="font-size: 24px; color: white" href="../../..">OpenShift Basics Course Outline</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://github.com/RedHatQuickCourses/REPLACEREPONAME/issues" target="_blank">Report Issues</a>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="rcb-demo-30Sep" data-version="1">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">OpenShift Basics Course Outline</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html">Home</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../LABENV/index.html">Lab Environment</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="introduction-to-openshift.html">Introduction to OpenShift</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="openshift-overview.html">OpenShift overview</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="openshift-architecture.html">OpenShift architecture</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="openshift-components.html">OpenShift components</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../hands-on-lab/hands-on-lab.html">Hands-on Lab</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../hands-on-lab/setting-up-an-openshift-cluster.html">Setting up an OpenShift cluster</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../hands-on-lab/deploying-a-sample-application.html">Deploying a sample application</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../hands-on-lab/configuring-networking-and-storage.html">Configuring networking and storage</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../appendix/appendix.html">Appendix</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">OpenShift Basics Course Outline</span>
+    <span class="version">1</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">OpenShift Basics Course Outline</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">1</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">OpenShift Basics Course Outline</a></li>
+    <li><a href="introduction-to-openshift.html">Introduction to OpenShift</a></li>
+    <li><a href="openshift-architecture.html">OpenShift architecture</a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">OpenShift architecture</h1>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">= OpenShift Architecture
+
+OpenShift, a Kubernetes-based container orchestration platform, is designed to provide a robust and scalable environment for deploying and managing containerized applications. Its architecture is composed of several key components that work together to ensure high availability, efficient resource utilization, and seamless application deployment.
+
+== OpenShift Master
+
+The OpenShift Master is the control plane of the cluster, responsible for managing the cluster and interacting with users. It comprises several components:
+
+- **API Server**: The front-end for the OpenShift control plane, serving the OpenShift API with which users and scripts interact. It is also responsible for validating and configuring data received from users, as well as updating the shared state of the cluster.
+
+- **Controller Manager**: A daemon that runs controllers, watching the shared state of the cluster through the API server and making changes attempting to move the current cluster state towards the desired state.
+
+- **etcd**: A distributed key-value store used for sharing the state of the cluster. It's the backbone for storing all cluster data in OpenShift.
+
+== OpenShift Nodes
+
+Nodes are the worker machines in OpenShift that run user workloads and OpenShift services. Each node contains the services necessary to run pods and is managed by the OpenShift Master. Key components include:
+
+- **Kubelet**: An agent that ensures containers are running in a pod.
+
+- **Kubernetes Master Services**: These services manage the OpenShift cluster on each node.
+
+- **OpenShift Services**: These services provide additional functionality for OpenShift, such as logging, routing, and registry services.
+
+== OpenShift Components Interaction
+
+The interaction between these components forms the backbone of OpenShift's architecture. The API server exposes the OpenShift REST API, allowing users to interact with the cluster programmatically. The controller manager watches for changes in the etcd key-value store and ensures the actual state matches the desired state. The kubelet on each node ensures that the containers specified in pods are running and healthy.
+
+== Scalability and High Availability
+
+OpenShift's architecture is designed with scalability and high availability in mind. Multiple masters provide redundancy and failover support, while nodes can be added or removed dynamically to scale the cluster up or down based on demand.
+
+== Networking
+
+OpenShift uses software-defined networking (SDN) to provide a unified cluster network that enables communication between pods, services</code></pre>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="openshift-overview.html">OpenShift overview</a></span>
+  <span class="next"><a href="openshift-components.html">OpenShift components</a></span>
+</nav>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <img src="../../../_/img/rhl-logo-red.png" height="40px" alt="Red Hat"  href="https://redhat.com" >
+</footer><script id="site-script" src="../../../_/js/site.js" data-ui-root-path="../../../_"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

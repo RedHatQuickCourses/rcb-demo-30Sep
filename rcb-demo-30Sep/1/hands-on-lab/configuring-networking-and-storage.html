@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Configuring networking and storage :: OpenShift Basics Course Outline</title>
+    <link rel="prev" href="deploying-a-sample-application.html">
+    <link rel="next" href="../appendix/appendix.html">
+    <meta name="generator" content="Antora 3.1.3">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://www.redhat.com" target="_blank"><img src="../../../_/img/redhat-logo.png" height="40px" alt="Red Hat"></a>
+      <a class="navbar-item" style="font-size: 24px; color: white" href="../../..">OpenShift Basics Course Outline</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://github.com/RedHatQuickCourses/REPLACEREPONAME/issues" target="_blank">Report Issues</a>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="rcb-demo-30Sep" data-version="1">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">OpenShift Basics Course Outline</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html">Home</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../LABENV/index.html">Lab Environment</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../introduction-to-openshift/introduction-to-openshift.html">Introduction to OpenShift</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../introduction-to-openshift/openshift-overview.html">OpenShift overview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../introduction-to-openshift/openshift-architecture.html">OpenShift architecture</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../introduction-to-openshift/openshift-components.html">OpenShift components</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="hands-on-lab.html">Hands-on Lab</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="setting-up-an-openshift-cluster.html">Setting up an OpenShift cluster</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="deploying-a-sample-application.html">Deploying a sample application</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="configuring-networking-and-storage.html">Configuring networking and storage</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../appendix/appendix.html">Appendix</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">OpenShift Basics Course Outline</span>
+    <span class="version">1</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">OpenShift Basics Course Outline</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">1</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">OpenShift Basics Course Outline</a></li>
+    <li><a href="hands-on-lab.html">Hands-on Lab</a></li>
+    <li><a href="configuring-networking-and-storage.html">Configuring networking and storage</a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Configuring networking and storage</h1>
+<div class="paragraph">
+<p><strong>Configuring Networking and Storage in OpenShift</strong></p>
+</div>
+<div class="paragraph">
+<p>In this section, we will delve into the crucial aspects of configuring networking and storage in OpenShift. Proper configuration of these components is essential for ensuring seamless communication between pods and reliable data persistence for applications.</p>
+</div>
+<div class="paragraph">
+<p><strong>1. Understanding OpenShift Networking</strong></p>
+</div>
+<div class="paragraph">
+<p>OpenShift uses software-defined networking (SDN) to provide a flexible and scalable network solution. The primary SDN solution used in OpenShift is Open vSwitch (OVS). Here, we&#8217;ll discuss key networking concepts:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Network Isolation</strong>: OpenShift uses a flat network model with network policies enforced by OVS to isolate pods, enabling secure communication between them.</p>
+</li>
+<li>
+<p><strong>Service Discovery</strong>: OpenShift Services provide a stable IP address and DNS name for a set of pods, allowing for easy service discovery within the cluster.</p>
+</li>
+<li>
+<p><strong>Ingress and Route</strong>: OpenShift Ingress and Routes expose services to the outside world, enabling secure communication with external clients.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Hands-on Activity: Configuring Network Policies</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Log in to your OpenShift cluster as a cluster administrator.</p>
+</li>
+<li>
+<p>Create a new project for testing network policies.</p>
+</li>
+<li>
+<p>Define a network policy that allows pods in a specific namespace to communicate with each other but not with pods in other namespaces.</p>
+</li>
+<li>
+<p>Apply the network policy to the project.</p>
+</li>
+<li>
+<p>Deploy a sample application consisting of multiple pods and verify that they can communicate based on the defined network policy.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>2. Configuring Storage in OpenShift</strong></p>
+</div>
+<div class="paragraph">
+<p>OpenShift provides various persistent storage options, including local storage, network file systems, cloud providers, and storage area networks (SANs). The most commonly used storage solutions are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Persistent Volumes (PV) and Persistent Volume Claims (PVC)</strong>: These OpenShift objects allow developers to create and consume storage without needing intimate knowledge of the underlying storage technology.</p>
+</li>
+<li>
+<p><strong>Dynamic Provisioning</strong>: OpenShift can automatically provision storage based on PVC requests, simplifying storage management.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Hands-on Activity: Setting Up Persistent Storage</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Log in to your OpenShift cluster as a cluster administrator.</p>
+</li>
+<li>
+<p>Create a StorageClass object for your preferred storage provider (e.g., NFS, AWS Elastic Block Store, etc.).</p>
+</li>
+<li>
+<p>Define a PVC requesting a specific storage capacity and access mode (ReadWriteOnce, ReadWriteMany</p>
+</li>
+</ol>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="deploying-a-sample-application.html">Deploying a sample application</a></span>
+  <span class="next"><a href="../appendix/appendix.html">Appendix</a></span>
+</nav>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <img src="../../../_/img/rhl-logo-red.png" height="40px" alt="Red Hat"  href="https://redhat.com" >
+</footer><script id="site-script" src="../../../_/js/site.js" data-ui-root-path="../../../_"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

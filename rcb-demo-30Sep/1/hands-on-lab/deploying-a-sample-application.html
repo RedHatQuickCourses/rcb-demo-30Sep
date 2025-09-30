@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Deploying a sample application :: OpenShift Basics Course Outline</title>
+    <link rel="prev" href="setting-up-an-openshift-cluster.html">
+    <link rel="next" href="configuring-networking-and-storage.html">
+    <meta name="generator" content="Antora 3.1.3">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://www.redhat.com" target="_blank"><img src="../../../_/img/redhat-logo.png" height="40px" alt="Red Hat"></a>
+      <a class="navbar-item" style="font-size: 24px; color: white" href="../../..">OpenShift Basics Course Outline</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://github.com/RedHatQuickCourses/REPLACEREPONAME/issues" target="_blank">Report Issues</a>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="rcb-demo-30Sep" data-version="1">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">OpenShift Basics Course Outline</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html">Home</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../LABENV/index.html">Lab Environment</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../introduction-to-openshift/introduction-to-openshift.html">Introduction to OpenShift</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../introduction-to-openshift/openshift-overview.html">OpenShift overview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../introduction-to-openshift/openshift-architecture.html">OpenShift architecture</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../introduction-to-openshift/openshift-components.html">OpenShift components</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="hands-on-lab.html">Hands-on Lab</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="setting-up-an-openshift-cluster.html">Setting up an OpenShift cluster</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="deploying-a-sample-application.html">Deploying a sample application</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="configuring-networking-and-storage.html">Configuring networking and storage</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../appendix/appendix.html">Appendix</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">OpenShift Basics Course Outline</span>
+    <span class="version">1</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">OpenShift Basics Course Outline</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">1</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">OpenShift Basics Course Outline</a></li>
+    <li><a href="hands-on-lab.html">Hands-on Lab</a></li>
+    <li><a href="deploying-a-sample-application.html">Deploying a sample application</a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Deploying a sample application</h1>
+<div class="sect1">
+<h2 id="_deploying_a_sample_application"><a class="anchor" href="#_deploying_a_sample_application"></a>Deploying a Sample Application</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In this section, we will guide you through the process of deploying a simple "Welcome" application on your OpenShift cluster. This hands-on activity will help you understand the basic steps involved in containerized application deployment using OpenShift.</p>
+</div>
+<div class="sect2">
+<h3 id="_prerequisites"><a class="anchor" href="#_prerequisites"></a>Prerequisites</h3>
+<div class="paragraph">
+<p>Before starting this lab, ensure that you have:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>An OpenShift cluster set up successfully. Refer to the 'Setting up an OpenShift cluster' lab for guidance.</p>
+</li>
+<li>
+<p>The <code>oc</code> CLI tool installed and configured to interact with your OpenShift cluster.</p>
+</li>
+<li>
+<p>Basic understanding of containerization and Kubernetes concepts.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_step_1_create_a_new_project"><a class="anchor" href="#_step_1_create_a_new_project"></a>Step 1: Create a New Project</h3>
+<div class="paragraph">
+<p>A project in OpenShift is equivalent to a namespace in Kubernetes. It&#8217;s a way to partition resources among users or teams. To create a new project, run the following command:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">oc new-project &lt;project_name&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Replace <code>&lt;project_name&gt;</code> with a name of your choice. For instance:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">oc new-project welcome-app-project</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To verify the newly created project, use:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">oc project</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This should display the name of the project you just created.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_step_2_prepare_the_sample_application"><a class="anchor" href="#_step_2_prepare_the_sample_application"></a>Step 2: Prepare the Sample Application</h3>
+<div class="paragraph">
+<p>For this lab, we&#8217;ll use a simple Node.js application that displays "Welcome to OpenShift!" when accessed. You can find the source code in the <code>welcome-app</code> directory.</p>
+</div>
+<div class="paragraph">
+<p>The application consists of:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>welcome.js</code>: A simple Node.js script that responds with "Welcome to OpenShift!" when accessed.</p>
+</li>
+<li>
+<p><code>Dockerfile</code>: Instructions to build a Docker image for the Node.js application.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_step_3_build_the_docker_image"><a class="anchor" href="#_step_3_build_the_docker_image"></a>Step 3: Build the Docker Image</h3>
+<div class="paragraph">
+<p>Navigate to the <code>welcome-app</code> directory and build the Docker image:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cd welcome-app
+oc new-build --strategy=docker --name=welcome-app</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This command tells OpenShift to create a new build configuration named <code>welcome-app</code> using the Docker strategy. OpenShift will then automatically trigger a build based on this configuration.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_step_4_deploy_the_application"><a class="anchor" href="#_step_4_deploy_the_application"></a>Step 4: Deploy the Application</h3>
+<div class="paragraph">
+<p>Once the build is successful, you can deploy the application using the following command:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">oc new-app welcome-app</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This command creates a new application using the previously built</p>
+</div>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="setting-up-an-openshift-cluster.html">Setting up an OpenShift cluster</a></span>
+  <span class="next"><a href="configuring-networking-and-storage.html">Configuring networking and storage</a></span>
+</nav>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <img src="../../../_/img/rhl-logo-red.png" height="40px" alt="Red Hat"  href="https://redhat.com" >
+</footer><script id="site-script" src="../../../_/js/site.js" data-ui-root-path="../../../_"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
